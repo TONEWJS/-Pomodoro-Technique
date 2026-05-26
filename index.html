@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <style>body{margin:0;overflow:hidden;font-family:-apple-system,'Microsoft YaHei',sans-serif;user-select:none}</style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div id="titlebar">
+    <span class="dot red" id="btn-close"></span>
+    <span class="dot yellow" id="btn-min"></span>
+    <span class="dot green" id="btn-pin"></span>
+    <span id="title-text">番茄钟</span>
+  </div>
+
+  <div id="timer-ring">
+    <svg viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="90" class="ring-bg"/>
+      <circle cx="100" cy="100" r="90" class="ring-fg" id="ring-fg"/>
+    </svg>
+    <div id="timer-display">
+      <div id="time">25:00</div>
+      <div id="label">专注</div>
+    </div>
+  </div>
+
+  <div id="controls">
+    <button id="btn-start" class="btn primary">开始</button>
+    <button id="btn-reset" class="btn">重置</button>
+  </div>
+
+  <div id="mode-switch">
+    <button class="mode-btn active" data-mode="focus" data-min="25">专注 25</button>
+    <button class="mode-btn" data-mode="break" data-min="5">休息 5</button>
+    <button class="mode-btn" data-mode="long" data-min="15">长休 15</button>
+  </div>
+
+  <div id="stats">今日完成: <span id="count">0</span></div>
+
+  <div id="settings" style="display:none">
+    <input type="number" id="set-focus" placeholder="专注(分)" min="1" max="120">
+    <input type="number" id="set-break" placeholder="短休(分)" min="1" max="60">
+    <input type="number" id="set-long" placeholder="长休(分)" min="1" max="60">
+    <button id="btn-save-settings" class="btn">保存</button>
+  </div>
+</div>
+<script src="renderer.js"></script>
+</body>
+</html>

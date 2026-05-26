@@ -1,0 +1,35 @@
+{
+  "name": "pomodoro",
+  "version": "1.0.0",
+  "description": "桌面番茄钟",
+  "author": "Pomodoro",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win dir",
+    "pack": "electron-builder --win portable"
+  },
+  "build": {
+    "appId": "com.pomodoro.app",
+    "productName": "番茄钟",
+    "win": {
+      "target": "dir",
+      "icon": null
+    },
+    "portable": {
+      "artifactName": "番茄钟.exe"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "renderer.js",
+      "style.css",
+      "node_modules/**/*"
+    ]
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.0.0",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
